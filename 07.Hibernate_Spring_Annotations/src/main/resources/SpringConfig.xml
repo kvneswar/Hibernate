@@ -38,17 +38,8 @@
 	   <property name="sessionFactory" ref="sessionFactory"/>
 	</bean>
 	
-	<tx:annotation-driven/>
-    <context:component-scan base-package="org.example.dao.impl org.example.service.impl"/>
+	<tx:annotation-driven proxy-target-class="true"/>
+	<context:component-scan base-package="org.example.service.impl"/>
+    <context:component-scan base-package="org.example.dao.impl"/>
     
-    <!-- <bean id="bookRepo" class="org.example.dao.impl.BookRepositoryDaoImpl">
-    	<property name="sessionFactory" ref="sessionFactory"/>
-    </bean>
-    
-    <bean id="bookRepoService" class="org.example.service.impl.BookRepositoryServiceImpl">
-    	<property name="bookRepositoryDao" ref="bookRepo"/>
-    </bean> -->
-    
-    <!-- <aop:config proxy-target-class="true"/> -->
-
 </beans>
