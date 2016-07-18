@@ -41,7 +41,7 @@
 	
 	<bean id="transactionManager" class="org.springframework.transaction.jta.JtaTransactionManager"/>
 	
-	<tx:annotation-driven/>
+	<tx:annotation-driven proxy-target-class="true"/>
     
     <bean id="bookRepo" class="org.example.dao.impl.BookRepositoryDaoImpl">
     	<property name="sessionFactory" ref="mySessionFactory"/>
@@ -51,6 +51,4 @@
     	<property name="bookRepositoryDao" ref="bookRepo"/>
     </bean>
     
-    <!-- <aop:config proxy-target-class="true"/> -->
-
 </beans>

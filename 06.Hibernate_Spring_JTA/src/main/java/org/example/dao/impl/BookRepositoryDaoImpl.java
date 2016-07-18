@@ -15,14 +15,9 @@ public class BookRepositoryDaoImpl implements BookRepositoryDao {
     }
 
 	public void save(BookRepository bookRepository) {
-
     	Session session = sessionFactory.openSession();
-    	session.beginTransaction();
-    	
 		Integer id = (Integer) session.save(bookRepository);
-		session.getTransaction().commit();
 		System.out.println(id);
-
 	}
     
 	
